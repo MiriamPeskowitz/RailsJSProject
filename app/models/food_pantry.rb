@@ -1,0 +1,2 @@
+class FoodPantry < ApplicationRecord
+end

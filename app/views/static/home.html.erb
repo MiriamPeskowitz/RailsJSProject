@@ -1,9 +1,17 @@
+<% if flash[:alert]%>
+    <div class="notice">
+        <%= flash[:alert] %>   
+    </div>
+    <% end %>
+
 <h2>Yelp for Soup Kitchens and Food Pantries in Philadelphia</h2>
 
 <p>Wondering what your local kitchen or pantry is like? 
 Check these out, and leave comments.</p>
 
-<%= link_to "See Soup Kitchens", soupkitchens_path %>
+<%= link_to "Soup Kitchens", soupkitchens_path %>
+<%= link_to "Food Pantries", food_pantry_index_path %> (This can't be right, but says rake routes )
+
 <%= link_to "Add a Soup Kitchen", new_soupkitchen_path %>
 <br>
 
