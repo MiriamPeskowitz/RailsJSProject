@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+
+
 # for login
 def create
     @user = User.find_by(first_name: params[:user][:first_name]
@@ -10,6 +12,7 @@ def create
       session[:user_id] = @user.id
       flash[:success] = "Welcome #{@user.first_name}."
       redirect_to soupkitchens_path
+      
      #how to redirect to whatever page the user was on? js thing?  
     else 
       render :new, :alert => "Try again."

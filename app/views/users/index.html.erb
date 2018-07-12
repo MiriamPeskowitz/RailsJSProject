@@ -1,0 +1,16 @@
+
+<ul>
+  <% @users.each do |user| %>
+    <p>
+  1/  <%= user.id %> - <%= user.first_name %> <%= user.last_name %>
+      <br>
+   2/   <%= link_to user.id %>
+      <br>
+      
+    3/-how to do this one -- where the whole line is a link? 
+       <%= link_to "user.id - user.first_name user.last_name", user_path(@user) %>
+   </p>
+  <% end %> 
+</ul>
+  
+<%= link_to "home", root_path %>
