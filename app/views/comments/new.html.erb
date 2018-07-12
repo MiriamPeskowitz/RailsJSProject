@@ -1,8 +1,29 @@
 <h2>New comment for <%= @soupkitchen.name %> </h2>
 
+<% if @soupkitchen.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(soupkitchen.errors.count, "error") %> prohibited this user from being saved:
+            </h2>
+
+            <ul>
+                <% @soupkitchen.errors.full_messages.each do |message| %>
+                    <li>
+                        <%= message %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+    <% end %> 
+
+
 
 <%= form_for([@soupkitchen, @comment]) do |f| %> 
-
   
     <%= f.label :title, "Title:" %><br>
     <%= f.text_field :title %>
@@ -14,6 +35,10 @@
 
   <%= f.submit %>
 <% end %>
+
+  
+    
+Question- render full code for form, or keep form_for, f.submit and end on this page? 
 
 
 To add name: add name column to the migration? delete title? or use current_user.first_name? 
