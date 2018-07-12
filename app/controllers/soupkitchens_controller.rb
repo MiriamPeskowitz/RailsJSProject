@@ -7,15 +7,13 @@ class SoupkitchensController < ApplicationController
 
   def new
   	@soupkitchen = Soupkitchen.new
-    @soupkitchen.comments.build
   end
 
   def create 
-  	@soupkitchen = Soupkitchen.find(params[:soupkitchen_params])
-    @comment = Comment.new
+  	@soupkitchen = Soupkitchen.new(params[:soupkitchen_params])
 
-  	if @soupkitchen.comment.save
-  		redirect_to soupkitchen_comment_path(@comment), notice: "New Soup Kitchen was successfully added."
+  	if @soupkitchen.save
+  		redirect_to soupkitchen_path(@soupkitchen), notice: "New Soup Kitchen was successfully added."
   	else
   		render :new, notice: "Something went wrong"
   	end 
