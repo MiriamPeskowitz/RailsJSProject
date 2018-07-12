@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 			redirect_to root_path
 		end 
 	end 
-#signup
+#signup to create a new user
 	def create
 	  @user = User.new(user_params)
 	  if @user.save

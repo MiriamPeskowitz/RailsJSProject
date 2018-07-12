@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   # before_action :set_comment, only: [:show]
+  #before_action :logged_in? -- only signed in users can leave comments 
+  
   def index
   end
 

@@ -4,14 +4,16 @@
 <%= form_for([@soupkitchen, @comment]) do |f| %> 
 
   
-    <%= f.label :title %><br>
+    <%= f.label :title, "Title:" %><br>
     <%= f.text_field :title %>
     <br>
-    <%= f.label :content %><br>
+    <%= f.label :content, "Comment" %><br>
     <%= f.text_area :content, cols: 40, rows: 15 %>
+
 
 
   <%= f.submit %>
 <% end %>
 
 
+To add name: add name column to the migration? delete title? or use current_user.first_name? 

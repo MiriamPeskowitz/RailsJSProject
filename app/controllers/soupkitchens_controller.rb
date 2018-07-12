@@ -10,7 +10,7 @@ class SoupkitchensController < ApplicationController
   end
 
   def create 
-  	@soupkitchen = Soupkitchen.new(params[:soupkitchen_params])
+  	@soupkitchen = Soupkitchen.new(soupkitchen_params)
 
   	if @soupkitchen.save
   		redirect_to soupkitchen_path(@soupkitchen), notice: "New Soup Kitchen was successfully added."
